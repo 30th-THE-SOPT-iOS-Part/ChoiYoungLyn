@@ -9,45 +9,51 @@ import UIKit
 
 class RegisterIDViewController: UIViewController {
 
+    // MARK:- Properties
+    var user: String?
+    
+    // MARK:- @IBOutlet Properties
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton! {
         didSet{
             nextButton.isEnabled = false
         }
     }
-    
-    var user: String?
-    
+
+    // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setButtonUI()
         setBackButton()
-        setNextButton()
+        setIdTextField()
     }
     
-
+    // MARK:- Function
+    private func setBackButton() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+    }
+    
+    private func setIdTextField() {
+        self.idTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    private func setButtonUI(){
+        nextButton.layer.cornerRadius = 5
+    }
+    
+    // MARK:- objc Function
+    @objc func textFieldDidChange(sender: UITextField) {
+        self.nextButton.isEnabled = self.idTextField.hasText
+    }
+    
+    // MARK:- @IBAction
     @IBAction func idNextButtonDidTap(_ sender: Any) {
         guard let registerPWVC = self.storyboard?.instantiateViewController(withIdentifier: "RegisterPWViewController") as? RegisterPWViewController else { return }
         
         registerPWVC.user = idTextField.text
                 
         self.navigationController?.pushViewController(registerPWVC, animated: true)
-    }
-    
-    private func setBackButton() {
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-                navigationItem.backBarButtonItem = backBarButtonItem
-    }
-    
-    private func textHandler(_ a: UIAction) -> Void {
-        if self.idTextField.text?.isEmpty == true {
-            self.nextButton.isEnabled = false
-        } else {
-            self.nextButton.isEnabled = true
-        }
-    }
-    
-    private func setNextButton() {
-        self.idTextField.addAction(UIAction(handler: self.textHandler), for: .editingChanged)
     }
 }

@@ -174,8 +174,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="비밀번호를 저장할 수 있으므로 iCloud©  기기에서 로그인 정보를 입력하지 않아도 됩니다." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7HC-rg-WX6">
-                                <rect key="frame" x="40" y="129" width="334" height="49.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="비밀번호를 저장할 수 있으므로 iCloud®  기기에서 로그인 정보를 입력하지 않아도 됩니다." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7HC-rg-WX6">
+                                <rect key="frame" x="40" y="129" width="334" height="49.666666666666664"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" red="0.57647061349999995" green="0.57647061349999995" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -247,7 +247,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="welcomeLabel" destination="PDT-cD-csX" id="KpP-yX-SUy"/>
+                        <outlet property="doneButton" destination="ALF-Kk-dj2" id="taV-nT-Uq5"/>
+                        <outlet property="welcomeTextView" destination="PDT-cD-csX" id="KpP-yX-SUy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xck-Jk-G5S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

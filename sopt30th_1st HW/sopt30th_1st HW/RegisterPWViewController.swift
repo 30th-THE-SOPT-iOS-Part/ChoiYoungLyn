@@ -9,6 +9,10 @@ import UIKit
 
 class RegisterPWViewController: UIViewController {
 
+    // MARK:- Properties
+    var user: String?
+    
+    // MARK:- @IBOutlet Properties
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton! {
         didSet{
@@ -16,15 +20,35 @@ class RegisterPWViewController: UIViewController {
         }
     }
     
-    var user: String?
-    
+    // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setButtonUI()
         setBackButton()
-        setNextButton()
+        setPwTextField()
     }
     
+    // MARK:- Function
+    private func setBackButton() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+                navigationItem.backBarButtonItem = backBarButtonItem
+    }
+    
+    // MARK:- objc Function
+    @objc func textFieldDidChange(sender: UITextField) {
+        self.nextButton.isEnabled = self.pwTextField.hasText
+        }
+    
+    private func setPwTextField() {
+        self.pwTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    private func setButtonUI(){
+        nextButton.layer.cornerRadius = 5
+    }
+    
+    // MARK:- @IBAction
     @IBAction func pwNextButtonDidTap(_ sender: Any) {
         guard let welcomeVC = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as? WelcomeViewController else { return }
 
@@ -32,24 +56,7 @@ class RegisterPWViewController: UIViewController {
         welcomeVC.modalTransitionStyle = .crossDissolve
         welcomeVC.modalPresentationStyle = .fullScreen
 
-        self.present(welcomeVC, animated: true, completion: nil) 
-    }
-    
-    private func setBackButton() {
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-                navigationItem.backBarButtonItem = backBarButtonItem
-    }
-    
-    private func textHandler(_ a: UIAction) -> Void {
-        if self.pwTextField.text?.isEmpty == true {
-            self.nextButton.isEnabled = false
-        } else {
-            self.nextButton.isEnabled = true
-        }
-    }
-    
-    private func setNextButton() {
-        self.pwTextField.addAction(UIAction(handler: self.textHandler), for: .editingChanged)
+        self.present(welcomeVC, animated: true, completion: nil)
     }
 
 }

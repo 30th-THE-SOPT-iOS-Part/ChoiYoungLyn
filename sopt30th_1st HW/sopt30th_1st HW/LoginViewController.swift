@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK:- @IBOutlet Properties
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton! {
@@ -18,22 +19,51 @@ class LoginViewController: UIViewController {
     }
     @IBOutlet weak var passwordButton: UIButton!
     
+    // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setButtonUI()
         setBackButton()
-        setLoginButton()
+        setTextField()
     }
     
-    @IBAction func passwordButton(_ sender: Any) {
-        if(pwTextField.isSecureTextEntry){
-            pwTextField.isSecureTextEntry = false
-            passwordButton.setImage(UIImage(named: "PasswordHidden"), for: .normal)
-            }
-        else{
-            pwTextField.isSecureTextEntry = true
-            passwordButton.setImage(UIImage(named: "PasswordShown"), for: .normal)
+    override func viewWillAppear(_ animated: Bool) {
+        removeTextField()
+        loginButton.isEnabled = false
+    }
+    
+    // MARK:- Function
+    private func setBackButton() {
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+                navigationItem.backBarButtonItem = backBarButtonItem
+    }
+    
+    private func setButtonUI(){
+        loginButton.layer.cornerRadius = 5
+    }
+    
+    private func setTextField() {
+        [idTextField,pwTextField].forEach {
+            $0?.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
+    }
+    
+    private func removeTextField() {
+        [idTextField,pwTextField].forEach {
+            $0.text?.removeAll()
+        }
+    }
+    
+    // MARK:- objc Function
+    @objc func textFieldDidChange(sender: UITextField) {
+        self.loginButton.isEnabled = self.idTextField.hasText && self.pwTextField.hasText
+        }
+    
+    // MARK:- @IBAction
+    @IBAction func passwordButton(_ sender: Any) {
+        passwordButton.setImage(pwTextField.isSecureTextEntry ? UIImage(named: "PasswordHidden") : UIImage(named: "PasswordShown"), for: .normal)
+        pwTextField.isSecureTextEntry = !pwTextField.isSecureTextEntry
     }
     
     @IBAction func loginButtonDidTap(_ sender: Any) {
@@ -50,24 +80,6 @@ class LoginViewController: UIViewController {
         guard let registerIDVC = self.storyboard?.instantiateViewController(withIdentifier: "RegisterIDViewController") as? RegisterIDViewController else { return }
         
         self.navigationController?.pushViewController(registerIDVC, animated: true)
-    }
-    
-    private func setBackButton() {
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-                navigationItem.backBarButtonItem = backBarButtonItem
-    }
-    
-    private func textHandler(_ a: UIAction) -> Void {
-        if self.idTextField.text?.isEmpty == true || self.pwTextField.text?.isEmpty == true{
-            self.loginButton.isEnabled = false
-        } else {
-            self.loginButton.isEnabled = true
-        }
-    }
-    
-    private func setLoginButton() {
-        self.idTextField.addAction(UIAction(handler: self.textHandler), for: .editingChanged)
-        self.pwTextField.addAction(UIAction(handler: self.textHandler), for: .editingChanged)
     }
     
 }
