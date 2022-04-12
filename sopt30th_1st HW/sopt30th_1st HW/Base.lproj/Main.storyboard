@@ -76,7 +76,7 @@
                                 <rect key="frame" x="315" y="378" width="44" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="PasswordShown" title=""/>
+                                <buttonConfiguration key="configuration" style="plain" image="PasswordHidden" title=""/>
                                 <connections>
                                     <action selector="passwordButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xze-58-BrN"/>
                                 </connections>
@@ -275,7 +275,7 @@
     </scenes>
     <resources>
         <image name="Instagram" width="175" height="50"/>
-        <image name="PasswordShown" width="20" height="20"/>
+        <image name="PasswordHidden" width="20" height="20"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -12,11 +12,7 @@ class LoginViewController: UIViewController {
     // MARK:- @IBOutlet Properties
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton! {
-        didSet{
-            loginButton.isEnabled = false
-        }
-    }
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
     
     // MARK:- LifeCycle
@@ -30,7 +26,7 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         removeTextField()
-        loginButton.isEnabled = false
+        setButtonUI()
     }
     
     // MARK:- Function
@@ -40,6 +36,7 @@ class LoginViewController: UIViewController {
     }
     
     private func setButtonUI(){
+        loginButton.isEnabled = false
         loginButton.layer.cornerRadius = 5
     }
     
@@ -62,7 +59,7 @@ class LoginViewController: UIViewController {
     
     // MARK:- @IBAction
     @IBAction func passwordButton(_ sender: Any) {
-        passwordButton.setImage(pwTextField.isSecureTextEntry ? UIImage(named: "PasswordHidden") : UIImage(named: "PasswordShown"), for: .normal)
+        passwordButton.setImage(pwTextField.isSecureTextEntry ? UIImage(named: "PasswordShown") : UIImage(named: "PasswordHidden"), for: .normal)
         pwTextField.isSecureTextEntry = !pwTextField.isSecureTextEntry
     }
     

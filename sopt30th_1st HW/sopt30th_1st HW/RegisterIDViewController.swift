@@ -14,12 +14,8 @@ class RegisterIDViewController: UIViewController {
     
     // MARK:- @IBOutlet Properties
     @IBOutlet weak var idTextField: UITextField!
-    @IBOutlet weak var nextButton: UIButton! {
-        didSet{
-            nextButton.isEnabled = false
-        }
-    }
-
+    @IBOutlet weak var nextButton: UIButton!
+    
     // MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +36,7 @@ class RegisterIDViewController: UIViewController {
     }
     
     private func setButtonUI(){
+        nextButton.isEnabled = false
         nextButton.layer.cornerRadius = 5
     }
     
