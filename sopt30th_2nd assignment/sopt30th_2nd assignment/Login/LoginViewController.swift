@@ -1,8 +1,8 @@
 //
 //  LoginViewController.swift
-//  sopt30th_1st HW
+//  sopt30th_2nd assignment
 //
-//  Created by 최영린 on 2022/04/06.
+//  Created by 최영린 on 2022/04/12.
 //
 
 import UIKit
@@ -19,13 +19,14 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUI()
         setButtonUI()
         setBackButton()
         setTextField()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        removeTextField()
+        resetTextField()
         setButtonUI()
     }
     
@@ -35,7 +36,12 @@ class LoginViewController: UIViewController {
         navigationItem.backBarButtonItem = backBarButtonItem
     }
     
+    private func setUI(){
+        pwTextField.setIcon(UIImage(named: "icn_password_hidden"))
+    }
+    
     private func setButtonUI(){
+        loginButton.backgroundColor = .systemBlue.withAlphaComponent(0.5)
         loginButton.isEnabled = false
         loginButton.layer.cornerRadius = 5
     }
@@ -46,7 +52,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func removeTextField() {
+    private func resetTextField() {
+        pwTextField.isSecureTextEntry = true
         [idTextField,pwTextField].forEach {
             $0.text?.removeAll()
         }
@@ -54,15 +61,16 @@ class LoginViewController: UIViewController {
     
     // MARK:- objc Function
     @objc func textFieldDidChange(sender: UITextField) {
-        self.loginButton.isEnabled = self.idTextField.hasText && self.pwTextField.hasText
+        if (idTextField.hasText && pwTextField.hasText) {
+            self.loginButton.backgroundColor = .systemBlue
+            self.loginButton.isEnabled = true
+        } else {
+            self.loginButton.backgroundColor = .systemBlue.withAlphaComponent(0.5)
+            self.loginButton.isEnabled = false
         }
-    
-    // MARK:- @IBAction
-    @IBAction func passwordButton(_ sender: Any) {
-        passwordButton.setImage(pwTextField.isSecureTextEntry ? UIImage(named: "icn_password_shown") : UIImage(named: "icn_password_hidden"), for: .normal)
-        pwTextField.isSecureTextEntry = !pwTextField.isSecureTextEntry
     }
     
+    // MARK:- @IBAction
     @IBAction func loginButtonDidTap(_ sender: Any) {
         let welcomeSB = UIStoryboard(name: Const.Storyboard.Name.welcome, bundle: nil)
         guard let welcomeVC = welcomeSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.welcomeVC) as? WelcomeViewController else { return }
