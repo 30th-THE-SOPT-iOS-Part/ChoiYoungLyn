@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,41 +13,52 @@
             <objects>
                 <viewController storyboardIdentifier="WelcomeViewController" id="Bso-Wv-ONu" customClass="WelcomeViewController" customModule="sopt30th_2nd_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6OH-Kg-QVH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="언제든지 연락처 정보와 사용자 이름을 변경할 수 있습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-CL-i27">
-                                <rect key="frame" x="35" y="439" width="344" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.57647061349999995" green="0.57647061349999995" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fI-7a-0XT">
-                                <rect key="frame" x="35" y="486" width="344" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.21568629149999999" green="0.59215688710000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="완료하기">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="doneButtonDidTap:" destination="Bso-Wv-ONu" eventType="touchUpInside" id="SQ5-0w-Vav"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="O O O  님 Instagram에                                              오신 것을 환영합니다." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-fW-pi3">
-                                <rect key="frame" x="20" y="346" width="380" height="81"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M0-7V-kbh">
-                                <rect key="frame" x="85" y="535" width="251" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="다른 계정으로 로그인하기"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="mUe-v0-MOo">
+                                <rect key="frame" x="35" y="327" width="306" height="158"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="O O O  님 Instagram에                                              오신 것을 환영합니다." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0vp-fW-pi3">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="67.666666666666671"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="언제든지 연락처 정보와 사용자 이름을 변경할 수 있습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-CL-i27">
+                                        <rect key="frame" x="0.0" y="85.666666666666686" width="306" height="14.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.57647061349999995" green="0.57647061349999995" blue="0.57647061349999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fI-7a-0XT">
+                                        <rect key="frame" x="0.0" y="118" width="306" height="40"/>
+                                        <color key="backgroundColor" red="0.21568629149999999" green="0.59215688710000003" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="SF6-ns-JdV"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="완료하기">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="doneButtonDidTap:" destination="Bso-Wv-ONu" eventType="touchUpInside" id="SQ5-0w-Vav"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="158" id="23K-Al-V7i"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M0-7V-kbh">
+                                <rect key="frame" x="117" y="503" width="141" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="4Ms-gg-oaE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="다른 계정으로 로그인하기"/>
                                 <connections>
                                     <action selector="signInButtonDidTap:" destination="Bso-Wv-ONu" eventType="touchUpInside" id="FUr-U0-zP8"/>
                                 </connections>
@@ -55,6 +66,13 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vlY-u5-oUG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mUe-v0-MOo" firstAttribute="leading" secondItem="vlY-u5-oUG" secondAttribute="leading" constant="35" id="E5R-ju-jvo"/>
+                            <constraint firstItem="1M0-7V-kbh" firstAttribute="top" secondItem="mUe-v0-MOo" secondAttribute="bottom" constant="18" id="GdX-2C-cTJ"/>
+                            <constraint firstItem="mUe-v0-MOo" firstAttribute="centerY" secondItem="6OH-Kg-QVH" secondAttribute="centerY" id="ae1-LU-mqd"/>
+                            <constraint firstItem="1M0-7V-kbh" firstAttribute="centerX" secondItem="6OH-Kg-QVH" secondAttribute="centerX" id="hjs-9c-TKg"/>
+                            <constraint firstItem="vlY-u5-oUG" firstAttribute="trailing" secondItem="mUe-v0-MOo" secondAttribute="trailing" constant="34" id="yFQ-d3-M4t"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="4fI-7a-0XT" id="cLG-aH-9v9"/>
@@ -63,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHH-fo-Hee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2573.913043478261" y="77.678571428571431"/>
+            <point key="canvasLocation" x="2573.5999999999999" y="77.58620689655173"/>
         </scene>
     </scenes>
     <resources>
