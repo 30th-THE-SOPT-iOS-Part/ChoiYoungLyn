@@ -19,6 +19,7 @@ class CustomTabBarController: UITabBarController {
     // MARK: - Functions
     func setTabBarController(){
         tabBar.unselectedItemTintColor = .black
+        
         //1. 스토리보드 상에 있는 뷰 컨트롤러 안전하게 가져와서 인스턴스화 -> 사용할 화면, 연결할 화면 가져오기
         guard let homeViewController =
                 self.storyboard?.instantiateViewController(withIdentifier: Const.ViewController.Identifier.homeVC),

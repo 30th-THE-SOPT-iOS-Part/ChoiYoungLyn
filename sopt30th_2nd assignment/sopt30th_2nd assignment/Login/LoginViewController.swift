@@ -9,13 +9,13 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    // MARK:- @IBOutlet Properties
+    // MARK: - @IBOutlet Properties
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordButton: UIButton!
     
-    // MARK:- LifeCycle
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,14 +30,14 @@ class LoginViewController: UIViewController {
         setButtonUI()
     }
     
-    // MARK:- Function
+    // MARK: - Functions
     private func setBackButton() {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     private func setUI(){
-        pwTextField.setIcon(UIImage(named: "icn_password_hidden"))
+        pwTextField.setIcon(UIImage(named: Const.Image.Name.pwhidden))
     }
     
     private func setButtonUI(){
@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // MARK:- objc Function
+    // MARK: - objc Function
     @objc func textFieldDidChange(sender: UITextField) {
         if (idTextField.hasText && pwTextField.hasText) {
             self.loginButton.backgroundColor = .systemBlue
@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    // MARK:- @IBAction
+    // MARK: - @IBAction Properties
     @IBAction func loginButtonDidTap(_ sender: Any) {
         let welcomeSB = UIStoryboard(name: Const.Storyboard.Name.welcome, bundle: nil)
         guard let welcomeVC = welcomeSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.welcomeVC) as? WelcomeViewController else { return }

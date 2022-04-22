@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Extensions
 extension Const{
     struct ViewController{
         struct Identifier {
@@ -14,6 +15,12 @@ extension Const{
             static let signupIDVC = "SignUpIDViewController"
             static let signupPWVC = "SignUpPWViewController"
             static let welcomeVC = "WelcomeViewController"
+            static let customtabBarVC = "CustomTabBarController"
+            static let homeVC = "HomeViewController"
+            static let searchVC = "SearchViewController"
+            static let reelsVC = "ReelsViewController"
+            static let shopVC = "ShopViewController"
+            static let mypageVC = "MyPageViewController"
         }
     }
 }

@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  sopt30th_1st HW
+//  sopt30th_2nd assignment
 //
-//  Created by 최영린 on 2022/04/04.
+//  Created by 최영린 on 2022/04/12.
 //
 
 import UIKit
@@ -11,6 +11,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+//    func switchLogin() {
+//        let LoginSB = UIStoryboard(name: Const.Storyboard.Name.login, bundle: nil)
+//        let LoginVC = LoginSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.loginVC)
+//        let nvc = UINavigationController(rootViewController: LoginVC)
+//
+//        self.window?.rootViewController = nvc
+//        window?.makeKeyAndVisible()
+//    }
+
+//    func switchMain() {
+//        let TabBarSB = UIStoryboard(name: Const.Storyboard.Name.tabBar, bundle: nil)
+//        guard let CustomTabBarVC = TabBarSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.customtabBarVC) as? CustomTabBarController else { return }
+//        let nvc = UINavigationController(rootViewController: CustomTabBarVC)
+//
+//        self.window?.rootViewController = nvc
+//        window?.makeKeyAndVisible()
+//    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.

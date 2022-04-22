@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Extensions
 extension Const{
     struct Storyboard{
         struct Name{
@@ -14,6 +15,7 @@ extension Const{
             static let login = "LoginStoryboard"
             static let signup = "SignUpStoryboard"
             static let welcome = "WelcomeStoryboard"
+            static let tabBar = "CustomTabBar"
         }
     }
 }

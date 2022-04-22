@@ -22,7 +22,7 @@ extension UITextField {
     }
     
     @objc func passwordButtonDidTap(_ sender: UIButton){
-        isSecureTextEntry ? sender.setImage(UIImage(named: "icn_password_shown"), for: .normal) : sender.setImage(UIImage(named: "icn_password_hidden"), for: .normal)
+        isSecureTextEntry ? sender.setImage(UIImage(named: Const.Image.Name.pwshown), for: .normal) : sender.setImage(UIImage(named: Const.Image.Name.pwhidden), for: .normal)
 
         isSecureTextEntry.toggle()
     }

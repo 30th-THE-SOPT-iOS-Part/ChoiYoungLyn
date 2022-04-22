@@ -1,22 +1,22 @@
 //
 //  RegisterIDViewController.swift
-//  sopt30th_1st HW
+//  sopt30th_2nd assignment
 //
-//  Created by 최영린 on 2022/04/06.
+//  Created by 최영린 on 2022/04/12.
 //
 
 import UIKit
 
 class SignUpIDViewController: UIViewController {
 
-    // MARK:- Properties
+    // MARK: - Properties
     var user: String?
     
-    // MARK:- @IBOutlet Properties
+    // MARK: - @IBOutlet Properties
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
-    // MARK:- Life Cycle
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ class SignUpIDViewController: UIViewController {
         setIdTextField()
     }
     
-    // MARK:- Function
+    // MARK: - Functions
     private func setBackButton() {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
@@ -36,16 +36,24 @@ class SignUpIDViewController: UIViewController {
     }
     
     private func setButtonUI(){
+        nextButton.backgroundColor = .systemBlue.withAlphaComponent(0.5)
         nextButton.isEnabled = false
         nextButton.layer.cornerRadius = 5
     }
     
-    // MARK:- objc Function
+    // MARK: - objc Function
     @objc func textFieldDidChange(sender: UITextField) {
-        self.nextButton.isEnabled = self.idTextField.hasText
+        if self.idTextField.hasText {
+            self.nextButton.backgroundColor = .systemBlue
+            self.nextButton.isEnabled = true
+        } else {
+            self.nextButton.backgroundColor = .systemBlue.withAlphaComponent(0.5)
+            self.nextButton.isEnabled = false
+        }
+        
     }
     
-    // MARK:- @IBAction
+    // MARK: - @IBAction Properties
     @IBAction func idNextButtonDidTap(_ sender: Any) {
         guard let registerPWVC = self.storyboard?.instantiateViewController(withIdentifier: Const.ViewController.Identifier.signupPWVC) as? SignUpPWViewController else { return }
         

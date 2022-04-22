@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  sopt30th_1st HW
+//  sopt30th_2nd assignment
 //
-//  Created by 최영린 on 2022/04/04.
+//  Created by 최영린 on 2022/04/12.
 //
 
 import UIKit
@@ -10,10 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "icn_back_24")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "icn_back_24")
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: Const.Image.Name.back)
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: Const.Image.Name.back)
         return true
     }
 
