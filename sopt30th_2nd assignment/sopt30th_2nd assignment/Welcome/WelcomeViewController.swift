@@ -11,7 +11,6 @@ class WelcomeViewController: UIViewController {
 
     // MARK: - Properties
     var user: String?
-    var window: UIWindow?
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var welcomeTextView: UITextView!
