@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageViewController: UIViewController {
+class ProfileViewController: UIViewController {
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {

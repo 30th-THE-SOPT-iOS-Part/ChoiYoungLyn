@@ -20,7 +20,7 @@ extension Const{
             static let searchVC = "SearchViewController"
             static let reelsVC = "ReelsViewController"
             static let shopVC = "ShopViewController"
-            static let mypageVC = "MyPageViewController"
+            static let profileVC = "ProfileViewController"
         }
     }
 }

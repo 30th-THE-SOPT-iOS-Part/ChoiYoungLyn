@@ -25,7 +25,6 @@ extension Const{
             static let shop_selected = "icn_shop_selected"
             static let profile = "icn_profile"
             static let profile_selected = "icn_profile_selected"
-            
         }
     }
 }

@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icn_home" selectedImage="icn_home_selected" id="3Ze-ES-oBA"/>
+                    <tabBarItem key="tabBarItem" title="" image="icn_home" selectedImage="icn_home_selected" id="Y6o-Ji-FXf"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
