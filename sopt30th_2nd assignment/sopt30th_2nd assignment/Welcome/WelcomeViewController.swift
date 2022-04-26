@@ -42,10 +42,7 @@ class WelcomeViewController: UIViewController {
         let TabBarSB = UIStoryboard(name: Const.Storyboard.Name.tabBar, bundle: nil)
         guard let CustomTabBarVC = TabBarSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.customtabBarVC) as? CustomTabBarController else { return }
 
-        CustomTabBarVC.modalTransitionStyle = .crossDissolve
-        CustomTabBarVC.modalPresentationStyle = .fullScreen
-
-        self.present(CustomTabBarVC, animated: true, completion: nil)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(CustomTabBarVC, animated: false)
     }
     
     @IBAction func signInButtonDidTap(_ sender: Any) {
