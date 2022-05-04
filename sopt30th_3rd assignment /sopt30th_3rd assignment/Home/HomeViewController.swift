@@ -9,6 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var homeTableView: UITableView!
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,5 +31,34 @@ class HomeViewController: UIViewController {
         navigationItem.rightBarButtonItems = [share, spacer, unlike, spacer, add]
     }
     
-    
+    private func setTableView() {
+        let storyNib = UINib(nibName: StoryCollectionViewCell.identifier, bundle: nil)
+        homeTableView.register(storyNib, forCellReuseIdentifier: StoryCollectionViewCell.identifier)
+        
+        let feedNib = UINib(nibName: StoryCollectionViewCell.identifier, bundle: nil)
+        homeTableView.register(feedNib, forCellReuseIdentifier: StoryCollectionViewCell.identifier)
+        
+//        homeTableView.delegate = self
+//        homeTableView.dataSource = self
+    }
 }
+
+//extension HomeViewController: UITableViewDelegate{
+////    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+////        return 90
+////    }
+//}
+//
+//extension HomeViewController: UITableViewDataSource {
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return FeedDataModel.sampleData.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: StoryCollectionViewCell.identifier, for: indexPath) as? StoryCollectionViewCell else { return UITableViewCell() }
+//
+//        cell.setData(StoryDataModel.sampleData[indexPath.row])
+//
+//        return cell
+//    }
+//}
