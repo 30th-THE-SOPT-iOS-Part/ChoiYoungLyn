@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="58" height="72"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-kM-9TE">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar6" translatesAutoresizingMaskIntoConstraints="NO" id="oMU-kM-9TE">
                         <rect key="frame" x="5" y="6" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="oMU-kM-9TE" secondAttribute="height" multiplier="1:1" id="53z-Uy-7we"/>
@@ -48,4 +48,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="91.741071428571431"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="avatar6" width="48" height="48"/>
+    </resources>
 </document>

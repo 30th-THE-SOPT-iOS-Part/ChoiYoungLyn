@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationUI()
-
+        setTableView()
     }
 
     private func setNavigationUI() {
@@ -32,33 +32,49 @@ class HomeViewController: UIViewController {
     }
     
     private func setTableView() {
-        let storyNib = UINib(nibName: StoryCollectionViewCell.identifier, bundle: nil)
-        homeTableView.register(storyNib, forCellReuseIdentifier: StoryCollectionViewCell.identifier)
+        let storyNib = UINib(nibName: StoryTableViewCell.identifier, bundle: nil)
+        homeTableView.register(storyNib, forCellReuseIdentifier: StoryTableViewCell.identifier)
         
-        let feedNib = UINib(nibName: StoryCollectionViewCell.identifier, bundle: nil)
-        homeTableView.register(feedNib, forCellReuseIdentifier: StoryCollectionViewCell.identifier)
+        let feedNib = UINib(nibName: FeedTableViewCell.identifier, bundle: nil)
+        homeTableView.register(feedNib, forCellReuseIdentifier: FeedTableViewCell.identifier)
         
-//        homeTableView.delegate = self
-//        homeTableView.dataSource = self
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
     }
 }
 
-//extension HomeViewController: UITableViewDelegate{
-////    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-////        return 90
-////    }
-//}
-//
-//extension HomeViewController: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return FeedDataModel.sampleData.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: StoryCollectionViewCell.identifier, for: indexPath) as? StoryCollectionViewCell else { return UITableViewCell() }
-//
-//        cell.setData(StoryDataModel.sampleData[indexPath.row])
-//
-//        return cell
-//    }
-//}
+extension HomeViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height : CGFloat = indexPath.section == 0 ? 72 : 488
+        return height
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let count : Int = section == 0 ? 1 : FeedDataModel.sampleData.count
+        return count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.section{
+        case 0 :
+            guard let storyCell = tableView.dequeueReusableCell(withIdentifier: StoryTableViewCell.identifier, for: indexPath) as? StoryTableViewCell else { return UITableViewCell() }
+            
+            return storyCell
+        case 1:
+            guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else { return UITableViewCell() }
+            
+            feedCell.setData(FeedDataModel.sampleData[indexPath.row])
+            
+            return feedCell
+        default:
+            return UITableViewCell()
+        }
+    }
+}
