@@ -7,9 +7,22 @@
 
 import UIKit
 
+protocol FeedTableViewCellDelegate : AnyObject{
+    func likeButtonDidTap(_ cell: FeedTableViewCell, didTap : Bool)
+}
+
 class FeedTableViewCell: UITableViewCell {
 
     static let identifier = "FeedTableViewCell"
+    
+    weak var delegate: FeedTableViewCellDelegate?
+    
+    var feedModel: FeedDataModel? {
+           didSet {
+               guard let feedModel = feedModel else { return }
+               setData(feedModel)
+           }
+       }
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileUserName: UILabel!
@@ -36,9 +49,7 @@ class FeedTableViewCell: UITableViewCell {
     }
 
     @IBAction func likeButtonDidTap(_ sender: UIButton) {
-        print("Tap")
-        isSelected.toggle()
-        isSelected ? sender.setImage(UIImage(named: Const.Image.Name.like), for: .normal) : sender.setImage(UIImage(named: Const.Image.Name.unlike), for: .normal)
+        delegate?.likeButtonDidTap(self, didTap: !sender.isSelected)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

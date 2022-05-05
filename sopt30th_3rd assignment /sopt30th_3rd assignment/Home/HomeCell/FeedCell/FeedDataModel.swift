@@ -17,7 +17,7 @@ struct FeedDataModel {
     var feedImage: UIImage? {
         return UIImage(named: feedImageName)
     }
-    let likeCount: Int
+    var likeCount: Int
     let feedContent: String
     let commentCount: Int
 }

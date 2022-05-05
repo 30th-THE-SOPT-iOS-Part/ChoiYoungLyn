@@ -28,6 +28,7 @@ extension Const{
             static let logo_instagram_small = "logo_instagram_small"
             static let add = "icn_add"
             static let unlike = "icn_unlike"
+            static let like = "icn_like"
             static let share = "icn_share"
             static let avatar1 = "avatar1"
             static let avatar2 = "avatar2"

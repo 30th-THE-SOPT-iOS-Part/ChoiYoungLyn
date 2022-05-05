@@ -68,11 +68,25 @@ extension HomeViewController: UITableViewDataSource {
             return storyCell
         case 1:
             guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else { return UITableViewCell() }
-            feedCell.setData(FeedDataModel.sampleData[indexPath.row])
             feedCell.selectionStyle = .none
+            feedCell.delegate = self
+            feedCell.feedModel = FeedDataModel.sampleData[indexPath.row]
             return feedCell
         default:
             return UITableViewCell()
         }
     }
 }
+
+extension HomeViewController: FeedTableViewCellDelegate {
+    func likeButtonDidTap(_ feedCell: FeedTableViewCell, didTap: Bool) {
+        feedCell.likeButton.isSelected.toggle()
+        if didTap {
+            feedCell.feedModel?.likeCount += 1
+        } else {
+            feedCell.feedModel?.likeCount -= 1
+        }
+        
+    }
+}
+
