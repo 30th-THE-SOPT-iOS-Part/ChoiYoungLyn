@@ -65,13 +65,11 @@ extension HomeViewController: UITableViewDataSource {
         switch indexPath.section{
         case 0 :
             guard let storyCell = tableView.dequeueReusableCell(withIdentifier: StoryTableViewCell.identifier, for: indexPath) as? StoryTableViewCell else { return UITableViewCell() }
-            
             return storyCell
         case 1:
             guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else { return UITableViewCell() }
-            
             feedCell.setData(FeedDataModel.sampleData[indexPath.row])
-            
+            feedCell.selectionStyle = .none
             return feedCell
         default:
             return UITableViewCell()

@@ -18,6 +18,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var feedUserName: UILabel!
     @IBOutlet weak var feedContent: UILabel!
     @IBOutlet weak var commentCount: UILabel!
+    @IBOutlet weak var likeButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,10 +35,15 @@ class FeedTableViewCell: UITableViewCell {
         commentCount.text = "댓글 \(feedData.commentCount)개 모두 보기"
     }
 
+    @IBAction func likeButtonDidTap(_ sender: UIButton) {
+        print("Tap")
+        isSelected.toggle()
+        isSelected ? sender.setImage(UIImage(named: Const.Image.Name.like), for: .normal) : sender.setImage(UIImage(named: Const.Image.Name.unlike), for: .normal)
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-    
 }
