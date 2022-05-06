@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="VYR-3V-13O">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="Hnw-Vc-m2f" customClass="LoginViewController" customModule="sopt30th_2nd_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Hnw-Vc-m2f" customClass="LoginViewController" customModule="sopt30th_3rd_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNd-0f-hZn">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xCR-xD-we7">
-                                <rect key="frame" x="133.66666666666666" y="499" width="160.99999999999997" height="17"/>
+                                <rect key="frame" x="133.66666666666666" y="500" width="160.99999999999997" height="17"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정이 없으신가요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGU-FA-zd3">
                                         <rect key="frame" x="0.0" y="0.0" width="108" height="17"/>
@@ -79,7 +79,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pt-Oz-JB2">
-                                <rect key="frame" x="16" y="419" width="396" height="44"/>
+                                <rect key="frame" x="16" y="420" width="396" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="im8-ZQ-Jxt"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="BaB-Pe-buI" firstAttribute="leading" secondItem="TiF-I4-gMF" secondAttribute="leading" constant="16" id="oXE-1N-jht"/>
                             <constraint firstItem="TiF-I4-gMF" firstAttribute="trailing" secondItem="6Pt-Oz-JB2" secondAttribute="trailing" constant="16" id="qjB-es-Ays"/>
                             <constraint firstItem="TiF-I4-gMF" firstAttribute="trailing" secondItem="BaB-Pe-buI" secondAttribute="trailing" constant="16" id="uNL-Sq-0fv"/>
-                            <constraint firstItem="6Pt-Oz-JB2" firstAttribute="top" secondItem="BaB-Pe-buI" secondAttribute="bottom" constant="33" id="w0W-uL-ppD"/>
+                            <constraint firstItem="6Pt-Oz-JB2" firstAttribute="top" secondItem="BaB-Pe-buI" secondAttribute="bottom" constant="34" id="w0W-uL-ppD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rdb-oc-WgT"/>
