@@ -12,6 +12,7 @@ class StoryTableViewCell: UITableViewCell {
     static let identifier = "StoryTableViewCell"
     
     @IBOutlet weak var storyCollectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         let nib = UINib(nibName: StoryCollectionViewCell.identifier, bundle: nil)
@@ -52,7 +53,7 @@ extension StoryTableViewCell: UICollectionViewDelegateFlowLayout {
         
         let cellWidth = width * (58/375)
         let cellHeight = cellWidth * (72/58)
-        
+
         return CGSize(width: cellWidth, height: cellHeight)
     }
     

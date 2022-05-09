@@ -38,7 +38,6 @@ class HomeViewController: UIViewController {
         let feedNib = UINib(nibName: FeedTableViewCell.identifier, bundle: nil)
         homeTableView.register(feedNib, forCellReuseIdentifier: FeedTableViewCell.identifier)
         
-        homeTableView.rowHeight = UITableView.automaticDimension
         homeTableView.estimatedRowHeight = 500
         
         homeTableView.delegate = self
@@ -47,10 +46,12 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let height : CGFloat = indexPath.section == 0 ? 72 : 488
-//        return height
-//    }
+    // 기기별로 계산해서 높이 조절하게 바꾸기
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let height : CGFloat = indexPath.section == 0 ? 72 : UITableView.automaticDimension
+        
+        return height
+    }
 }
 
 extension HomeViewController: UITableViewDataSource {

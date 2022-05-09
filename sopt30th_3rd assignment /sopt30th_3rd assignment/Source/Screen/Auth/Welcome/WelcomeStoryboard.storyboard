@@ -11,7 +11,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="mLb-nt-jNT">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="Bso-Wv-ONu" customClass="WelcomeViewController" customModule="sopt30th_2nd_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="Bso-Wv-ONu" customClass="WelcomeViewController" customModule="sopt30th_3rd_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6OH-Kg-QVH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
