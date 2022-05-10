@@ -9,6 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // MARK: - Properties
+    private enum SectionLayout: CaseIterable {
+        case story, feed
+    }
+    
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var homeTableView: UITableView!
     
@@ -39,6 +44,7 @@ class HomeViewController: UIViewController {
         homeTableView.register(feedNib, forCellReuseIdentifier: FeedTableViewCell.identifier)
         
         homeTableView.estimatedRowHeight = 500
+        homeTableView.rowHeight = UITableView.automaticDimension
         
         homeTableView.delegate = self
         homeTableView.dataSource = self
@@ -47,11 +53,11 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate{
     // 기기별로 계산해서 높이 조절하게 바꾸기
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height : CGFloat = indexPath.section == 0 ? 72 : UITableView.automaticDimension
-        
-        return height
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let height : CGFloat = indexPath.section == 0 ? 82 : UITableView.automaticDimension
+//
+//        return height
+//    }
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -61,23 +67,23 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count : Int = section == 0 ? 1 : FeedDataModel.sampleData.count
+        let sectionType = SectionLayout.allCases[section]
+        let count : Int = sectionType == .story ? 1 : FeedDataModel.sampleData.count
         return count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section{
-        case 0 :
+        let sectionType = SectionLayout.allCases[indexPath.section]
+        switch sectionType{
+        case .story:
             guard let storyCell = tableView.dequeueReusableCell(withIdentifier: StoryTableViewCell.identifier, for: indexPath) as? StoryTableViewCell else { return UITableViewCell() }
             return storyCell
-        case 1:
+        case .feed:
             guard let feedCell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.identifier, for: indexPath) as? FeedTableViewCell else { return UITableViewCell() }
             feedCell.selectionStyle = .none
             feedCell.delegate = self
             feedCell.feedModel = FeedDataModel.sampleData[indexPath.row]
             return feedCell
-        default:
-            return UITableViewCell()
         }
     }
 }
