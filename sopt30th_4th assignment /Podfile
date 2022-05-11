@@ -6,5 +6,5 @@ target 'sopt30th_4th assignment' do
   use_frameworks!
 
   # Pods for sopt30th_4th assignment
-
+  pod 'Alamofire'
 end
