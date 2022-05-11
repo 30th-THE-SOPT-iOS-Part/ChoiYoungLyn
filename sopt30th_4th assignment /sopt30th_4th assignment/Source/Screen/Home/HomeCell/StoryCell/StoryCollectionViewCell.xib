@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StoryCollectionViewCell" customModule="sopt30th_3rd_assignment" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StoryCollectionViewCell" customModule="sopt30th_4th_assignment" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="58" height="72"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -26,9 +26,6 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiL-Ie-7mV">
                         <rect key="frame" x="15.666666666666664" y="57" width="27" height="12"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="12" id="4Hq-nS-Kx4"/>
-                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,10 +34,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="JiL-Ie-7mV" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8dv-S5-a1X"/>
-                <constraint firstItem="oMU-kM-9TE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="EMn-pO-HKZ"/>
+                <constraint firstItem="JiL-Ie-7mV" firstAttribute="centerX" secondItem="oMU-kM-9TE" secondAttribute="centerX" id="1eB-Uh-Xzm"/>
+                <constraint firstAttribute="bottom" secondItem="JiL-Ie-7mV" secondAttribute="bottom" constant="3" id="KSP-xe-hbp"/>
                 <constraint firstItem="JiL-Ie-7mV" firstAttribute="top" secondItem="oMU-kM-9TE" secondAttribute="bottom" constant="2" id="RQr-2a-BUn"/>
                 <constraint firstItem="oMU-kM-9TE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7" id="cHt-HG-xTx"/>
+                <constraint firstItem="oMU-kM-9TE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="efX-5A-ERO"/>
+                <constraint firstAttribute="trailing" secondItem="oMU-kM-9TE" secondAttribute="trailing" constant="5" id="gNt-4E-cex"/>
             </constraints>
             <connections>
                 <outlet property="storyImage" destination="oMU-kM-9TE" id="xAz-mi-1YL"/>

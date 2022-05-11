@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         let feedNib = UINib(nibName: FeedTableViewCell.identifier, bundle: nil)
         homeTableView.register(feedNib, forCellReuseIdentifier: FeedTableViewCell.identifier)
         
-        homeTableView.estimatedRowHeight = 500
+        //homeTableView.estimatedRowHeight = 500
         homeTableView.rowHeight = UITableView.automaticDimension
         
         homeTableView.delegate = self
