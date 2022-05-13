@@ -47,24 +47,11 @@ class UserService {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let value = response.value else { return }
-                let networkResult = self.judgeLoginStatus(by: statusCode, value)
+                let networkResult = self.judgeStatus(by: statusCode, value, type: LoginResponse.self)
                 completion(networkResult)
             case .failure:
                 completion(.networkFail)
             }
-        }
-    }
-    
-    private func judgeLoginStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
-        let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(LoginResponse.self, from: data)
-        else { return .pathErr(data) }
-        
-        switch statusCode {
-        case 200: return .success(decodedData as Any)
-        case 400 ..< 500: return .pathErr(decodedData)
-        case 500: return .serverErr
-        default: return .networkFail
         }
     }
     
@@ -94,7 +81,7 @@ class UserService {
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let value = response.value else { return }
                 
-                let networkResult = self.judgeSignUpStatus(by: statusCode, value)
+                let networkResult = self.judgeStatus(by: statusCode, value, type: SignUpResponse.self)
                 completion(networkResult)
             
             case .failure:
@@ -103,13 +90,13 @@ class UserService {
         }
     }
     
-    private func judgeSignUpStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+    private func judgeStatus<T:Codable> (by statusCode: Int, _ data: Data, type: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(SignUpResponse.self, from: data)
+        guard let decodedData = try? decoder.decode(type.self, from: data)
         else { return .pathErr(data) }
         
         switch statusCode {
-        case 201: return .success(decodedData as Any)
+        case 200 ..< 300: return .success(decodedData as Any)
         case 400 ..< 500: return .pathErr(decodedData)
         case 500: return .serverErr
         default: return .networkFail
