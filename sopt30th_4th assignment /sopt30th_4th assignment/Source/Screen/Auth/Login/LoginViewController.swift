@@ -72,14 +72,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - @IBAction Properties
     @IBAction func loginButtonDidTap(_ sender: Any) {
-        let welcomeSB = UIStoryboard(name: Const.Storyboard.Name.welcome, bundle: nil)
-        guard let welcomeVC = welcomeSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.welcomeVC) as? WelcomeViewController else { return }
-        
-        welcomeVC.user = idTextField.text
-        welcomeVC.modalTransitionStyle = .crossDissolve
-        welcomeVC.modalPresentationStyle = .fullScreen
-
-        self.present(welcomeVC, animated: true, completion: nil)
+        login()
     }
     
     @IBAction func registerButtonDidTap(_ sender: Any) {
@@ -90,5 +83,49 @@ class LoginViewController: UIViewController {
     }
     
 }
+
+extension LoginViewController {
+    
+    func login() {
+        guard let email = idTextField.text else { return }
+        guard let password = pwTextField.text else { return }
+        
+        UserService.shared.login(
+            email: email,
+            password: password) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? LoginResponse else { return }
+                self.alerttransition(message: "로그인 성공", storyboard: Const.Storyboard.Name.tabBar, viewcontroller: Const.ViewController.Identifier.customtabBarVC)
+                print(data)
+            case .pathErr(let data):
+                guard let data = data as? LoginResponse else { return }
+                data.status == 404 ? self.alert(message: "해당하는 계정이 없습니다. ") : self.alert(message: "비밀번호를 다시 입력하세요.")
+                print(data.message)
+            default:
+                self.alert(message: "로그인 실패")
+            }
+        }
+    }
+    
+    func alerttransition(message: String, storyboard: String, viewcontroller: String) {
+        let alertVC = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default){_ in
+            let viewcontroller = UIStoryboard(name: storyboard, bundle: nil).instantiateViewController(withIdentifier: viewcontroller)
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootVC(viewcontroller, animated: false)
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true)
+    }
+
+    func alert(message: String) {
+        let alertVC = UIAlertController(title: message, message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true)
+    }
+}
+    
+
 
 

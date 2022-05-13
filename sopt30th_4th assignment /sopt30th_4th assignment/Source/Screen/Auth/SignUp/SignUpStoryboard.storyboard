@@ -11,7 +11,7 @@
         <!--Sign UpID View Controller-->
         <scene sceneID="cDI-U9-Sud">
             <objects>
-                <viewController storyboardIdentifier="SignUpIDViewController" id="aHd-JQ-JTh" customClass="SignUpIDViewController" customModule="sopt30th_2nd_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpIDViewController" id="aHd-JQ-JTh" customClass="SignUpIDViewController" customModule="sopt30th_4th_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ied-hi-5QH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
         <!--Sign UpPW View Controller-->
         <scene sceneID="16v-Tk-Arh">
             <objects>
-                <viewController storyboardIdentifier="SignUpPWViewController" id="cUF-H6-5sG" customClass="SignUpPWViewController" customModule="sopt30th_2nd_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPWViewController" id="cUF-H6-5sG" customClass="SignUpPWViewController" customModule="sopt30th_4th_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qtI-bs-49Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

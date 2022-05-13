@@ -11,6 +11,7 @@ class SignUpPWViewController: UIViewController {
 
     // MARK: - Properties
     var user: String?
+    var password: String?
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var pwTextField: UITextField!
@@ -64,6 +65,7 @@ class SignUpPWViewController: UIViewController {
         guard let welcomeVC = welcomeSB.instantiateViewController(withIdentifier: Const.ViewController.Identifier.welcomeVC) as? WelcomeViewController else { return }
 
         welcomeVC.user = user
+        welcomeVC.password = pwTextField.text
         welcomeVC.modalTransitionStyle = .crossDissolve
         welcomeVC.modalPresentationStyle = .fullScreen
 
