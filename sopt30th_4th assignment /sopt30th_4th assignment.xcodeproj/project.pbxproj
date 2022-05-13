@@ -17,6 +17,7 @@
 		692F631127FA7A6000EB2F7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692F630F27FA7A6000EB2F7E /* Main.storyboard */; };
 		692F631327FA7A6300EB2F7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 692F631227FA7A6300EB2F7E /* Assets.xcassets */; };
 		692F631627FA7A6300EB2F7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 692F631427FA7A6300EB2F7E /* LaunchScreen.storyboard */; };
+		694EDFA9282EB0B600F92BE6 /* alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694EDFA8282EB0B600F92BE6 /* alert+Extension.swift */; };
 		695F17C8282ABC63002E82D1 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F17C7282ABC63002E82D1 /* APIConstants.swift */; };
 		695F17CA282ABCCB002E82D1 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F17C9282ABCCB002E82D1 /* NetworkResult.swift */; };
 		695F17D0282ABE74002E82D1 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695F17CF282ABE74002E82D1 /* LoginModel.swift */; };
@@ -67,6 +68,7 @@
 		692F631227FA7A6300EB2F7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		692F631527FA7A6300EB2F7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		692F631727FA7A6300EB2F7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		694EDFA8282EB0B600F92BE6 /* alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "alert+Extension.swift"; sourceTree = "<group>"; };
 		695F17C7282ABC63002E82D1 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		695F17C9282ABCCB002E82D1 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		695F17CF282ABE74002E82D1 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				690FDAB82808332B00128419 /* pwTextField+Extension.swift */,
 				696460B4281FC1B6006D1D64 /* UIHomeNavigationItem+Extension.swift */,
+				694EDFA8282EB0B600F92BE6 /* alert+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				69EA353C280597A700F9D8CF /* ViewController.swift in Sources */,
 				696460CF28218164006D1D64 /* FeedTableViewCell.swift in Sources */,
 				695F17D2282ABEAD002E82D1 /* UserService.swift in Sources */,
+				694EDFA9282EB0B600F92BE6 /* alert+Extension.swift in Sources */,
 				690C891227FDCC170023A257 /* SignUpIDViewController.swift in Sources */,
 				696707A1280872F400061BDF /* ShopViewController.swift in Sources */,
 				690C890E27FDC9720023A257 /* LoginViewController.swift in Sources */,
