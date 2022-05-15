@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationUI()
+        loadImage()
         setTableView()
     }
 
@@ -43,7 +44,7 @@ class HomeViewController: UIViewController {
         let feedNib = UINib(nibName: FeedTableViewCell.identifier, bundle: nil)
         homeTableView.register(feedNib, forCellReuseIdentifier: FeedTableViewCell.identifier)
         
-        //homeTableView.estimatedRowHeight = 500
+        homeTableView.estimatedRowHeight = 500
         homeTableView.rowHeight = UITableView.automaticDimension
         
         homeTableView.delegate = self
@@ -95,6 +96,26 @@ extension HomeViewController: FeedTableViewCellDelegate {
             feedCell.feedModel?.likeCount += 1
         } else {
             feedCell.feedModel?.likeCount -= 1
+        }
+    }
+}
+
+extension HomeViewController {
+    
+    func loadImage() {
+        ImageService.shared.loadRandomImage() {
+            response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? ImageResponse else { return }
+                for i in 0..<FeedDataModel.sampleData.count {
+                    FeedDataModel.sampleData[i].feedImageName = data[i].download_url
+                }
+                self.homeTableView.reloadData()
+                print(data)
+            default:
+                print(response)
+            }
         }
     }
 }
