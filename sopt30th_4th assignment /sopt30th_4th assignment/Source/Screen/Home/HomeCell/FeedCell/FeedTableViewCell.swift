@@ -28,8 +28,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var profileUserName: UILabel!
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var likeCount: UILabel!
-    @IBOutlet weak var feedUserName: UILabel!
-    @IBOutlet weak var feedContent: UILabel!
+    @IBOutlet weak var feedUserNameAndContent: UILabel!
     @IBOutlet weak var commentCount: UILabel!
     @IBOutlet weak var likeButton: UIButton!
     
@@ -43,18 +42,37 @@ class FeedTableViewCell: UITableViewCell {
         profileUserName.text = feedData.profileUserName
         feedImage.load(imgURL: feedData.feedImageName)
         likeCount.text = "좋아요 \(feedData.likeCount)개"
-        feedUserName.text = feedData.profileUserName
-        feedContent.text = feedData.feedContent
+        feedUserNameAndContent.attributedText = attributeString(userName: feedData.profileUserName , feedContent: feedData.feedContent)
         commentCount.text = "댓글 \(feedData.commentCount)개 모두 보기"
     }
-
-    @IBAction func likeButtonDidTap(_ sender: UIButton) {
-        delegate?.likeButtonDidTap(self, didTap: !sender.isSelected)
-    }
+    
+    func attributeString(userName: String, feedContent: String) -> NSAttributedString {
+           
+           let userNameFont = UIFont.systemFont(ofSize: 12, weight: .medium)
+           let userNameAttr: [NSMutableAttributedString.Key: Any] = [
+               .font: userNameFont,
+           ]
+           
+           let contentFont = UIFont.systemFont(ofSize: 12, weight: .medium)
+           let contentFontAttr: [NSMutableAttributedString.Key: Any] = [
+               .font: contentFont,
+           ]
+           let userNameAttributedString = NSMutableAttributedString(string: "\(userName) ", attributes: userNameAttr)
+           
+           let contentAttributedString = NSMutableAttributedString(string: "\(feedContent) ", attributes: contentFontAttr)
+           
+           userNameAttributedString.append(contentAttributedString)
+           
+           return userNameAttributedString
+       }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    @IBAction func likeButtonDidTap(_ sender: UIButton) {
+        delegate?.likeButtonDidTap(self, didTap: !sender.isSelected)
     }
 }

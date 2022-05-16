@@ -27,7 +27,7 @@ extension FeedDataModel {
         FeedDataModel(profileImageName: Const.Image.Name.avatar1, profileUserName: "avatar1", feedImageName: "", likeCount: 30, feedContent: "🌱 기회는 일어나는 것이 아니라 만들어내는 것이다.", commentCount: 19),
         FeedDataModel(profileImageName: Const.Image.Name.avatar2, profileUserName: "avatar2", feedImageName: "", likeCount: 330, feedContent: "⏰ 큰 목표를 이루고 싶으면 허락을 구하지 마라", commentCount: 24),
         FeedDataModel(profileImageName: Const.Image.Name.avatar3, profileUserName: "avatar3", feedImageName: "", likeCount: 130, feedContent: "🌱 늘 하던 대로 하면 늘 얻던 것을 얻는다.", commentCount: 100),
-        FeedDataModel(profileImageName: Const.Image.Name.avatar4, profileUserName: "avatar4", feedImageName: "", likeCount: 240, feedContent: "5213123123123123123155555555555555555555555555555555555555555555555555555555555555.", commentCount: 140)
+        FeedDataModel(profileImageName: Const.Image.Name.avatar4, profileUserName: "avatar4", feedImageName: "", likeCount: 240, feedContent: "111111111111111111111111111111111111111111111111111111111111111111111.", commentCount: 140)
     ]
 }
 
