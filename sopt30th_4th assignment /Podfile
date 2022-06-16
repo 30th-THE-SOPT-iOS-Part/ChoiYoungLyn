@@ -7,4 +7,5 @@ target 'sopt30th_4th assignment' do
 
   # Pods for sopt30th_4th assignment
   pod 'Alamofire'
+  pod 'Kingfisher'
 end

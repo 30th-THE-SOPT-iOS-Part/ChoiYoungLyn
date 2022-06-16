@@ -11,7 +11,7 @@
         <!--Home View Controller-->
         <scene sceneID="13S-oi-Y3u">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" id="gZQ-A4-k7a" customClass="HomeViewController" customModule="sopt30th_3rd_assignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="gZQ-A4-k7a" customClass="HomeViewController" customModule="sopt30th_4th_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s76-NL-DbQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

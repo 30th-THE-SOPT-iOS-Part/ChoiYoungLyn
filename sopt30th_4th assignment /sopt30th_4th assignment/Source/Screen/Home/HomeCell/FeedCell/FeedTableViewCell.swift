@@ -23,7 +23,7 @@ class FeedTableViewCell: UITableViewCell {
                setData(feedModel)
            }
        }
-    
+
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileUserName: UILabel!
     @IBOutlet weak var feedImage: UIImageView!
@@ -40,7 +40,7 @@ class FeedTableViewCell: UITableViewCell {
     func setData(_ feedData: FeedDataModel) {
         profileImage.image = feedData.profileImage
         profileUserName.text = feedData.profileUserName
-        feedImage.load(imgURL: feedData.feedImageName)
+        feedImage.load(feedData.feedImageName)
         likeCount.text = "좋아요 \(feedData.likeCount)개"
         feedUserNameAndContent.attributedText = attributeString(userName: feedData.profileUserName , feedContent: feedData.feedContent)
         commentCount.text = "댓글 \(feedData.commentCount)개 모두 보기"
