@@ -1,0 +1,6 @@
+framework module Pods_sopt30th_4th_assignment {
+  umbrella header "Pods-sopt30th_4th assignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
